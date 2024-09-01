@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { collection, Firestore, getDocs } from '@angular/fire/firestore';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '@shared/components/header/header.component';
 
@@ -11,4 +12,11 @@ import { HeaderComponent } from '@shared/components/header/header.component';
 })
 export class AppComponent {
   title = 'store-app';
+  firestore = inject(Firestore);
+
+  ngOnInit() {
+    getDocs(collection(this.firestore, 'categories')).then((response) => {
+      console.log(response.docs.map((doc) => doc.data()));
+    });
+  }
 }

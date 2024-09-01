@@ -8,6 +8,14 @@ import {
 
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import {
+  getAnalytics,
+  provideAnalytics,
+  ScreenTrackingService,
+} from '@angular/fire/analytics';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from '../environments/environment.development';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,5 +25,9 @@ export const appConfig: ApplicationConfig = {
       withPreloading(PreloadAllModules)
     ),
     provideHttpClient(),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAnalytics(() => getAnalytics()),
+    ScreenTrackingService,
+    provideFirestore(() => getFirestore()),
   ],
 };

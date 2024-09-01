@@ -4,13 +4,9 @@
   >
     <div class="flex items-center space-x-8">
       <a routerLink="/" class="flex items-center">
-        <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          class="h-6 mr-3"
-          alt="Cart Logo"
-        />
+        <img src="assets/logo.png" class="h-8 mr-3" alt="Cart Logo" />
         <span class="self-center text-xl font-semibold whitespace-nowrap"
-          >Cart</span
+          >Plantin</span
         >
       </a>
       <ul class="flex space-x-6">
@@ -28,18 +24,18 @@
           <a
             routerLinkActive="underline text-indigo-700"
             [routerLinkActiveOptions]="{ exact: true }"
-            routerLink="/about"
+            routerLink="/services"
             class="block hover:underline"
-            >About</a
+            >Servicios</a
           >
         </li>
         <li>
           <a
             routerLinkActive="underline text-indigo-700"
             [routerLinkActiveOptions]="{ exact: true }"
-            routerLink="/services"
+            routerLink="/about"
             class="block hover:underline"
-            >Services</a
+            >Quiénes Somos</a
           >
         </li>
       </ul>

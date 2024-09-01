@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+1 Agregar un entorno de producción y uno de desarrollo
+ng g environments
+
+2 Agregar firebase:
+
+ng add @angular/fire
