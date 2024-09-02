@@ -35,6 +35,13 @@ export const routes: Routes = [
             (m) => m.AboutComponent
           ),
       },
+      {
+        path: 'blogs',
+        loadComponent: () =>
+          import('./domains/blogs/pages/blog/blog.component').then(
+            (m) => m.BlogComponent
+          ),
+      },
     ],
   },
   {
