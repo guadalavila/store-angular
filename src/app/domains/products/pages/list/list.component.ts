@@ -10,6 +10,7 @@ import { RouterLinkWithHref } from '@angular/router';
 import { CategoriesItemComponent } from '@products/components/categories-item/categories-item.component';
 import { Plant } from '@shared/models/plant.models';
 import { LoadingComponent } from '@shared/components/loading/loading.component';
+import { AlertsService } from '@shared/services/alerts.service';
 
 @Component({
   selector: 'app-list',
@@ -34,6 +35,7 @@ export class ListComponent {
 
   private cartService = inject(CartService);
   private productService = inject(ProductService);
+  private alertService = inject(AlertsService);
 
   constructor() {}
 
@@ -43,6 +45,10 @@ export class ListComponent {
 
   onHandleAdd(product: Plant) {
     this.cartService.addToCart(product);
+    this.alertService.showSuccess('Producto agregado al carrito!');
+    setTimeout(() => {
+      this.alertService.hideAlert();
+    }, 2000);
   }
 
   private getProducts() {

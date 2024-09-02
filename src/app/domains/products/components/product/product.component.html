@@ -1,5 +1,5 @@
 <div
-  class="my-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+  class="my-4 w-full max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 hover:shadow dark:hover:shadow"
 >
   <a [routerLink]="['/product', product.id]">
     <img
@@ -24,7 +24,7 @@
       >{{ product.price | currency : "$" : "symbol" : "1.0" }}</span
     >
     <div class="flex justify-center mt-2">
-      <app-button text="Comprar" (onPress)="addProduct()" />
+      <app-button type="outline" text="Agregar" (onPress)="addProduct()" />
     </div>
   </div>
 </div>

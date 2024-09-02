@@ -1,3 +1,7 @@
 <app-header />
+@if(isShow()){
+<app-alert [message]="message()" [type]="type()"></app-alert>
+
+}
 <router-outlet></router-outlet>
 <app-footer />
