@@ -1,0 +1,30 @@
+<nav class="bg-gray-50 h-full">
+  <div
+    class="px-4 py-5 mx-auto text-sm text-gray-500 dark:text-gray-400 md:px-6"
+  >
+    <ul class="sm:mb-4 md:mb-0">
+      <li class="my-3">
+        <a
+          routerLink="/"
+          routerLinkActive="underline text-primary-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="hover:underline hover:text-primary-600 dark:hover:text-primary-500 mx-4"
+        >
+          Todas
+        </a>
+      </li>
+      @for (item of categories(); track $index) {
+      <li class="my-3">
+        <a
+          [routerLink]="[item.name.toLowerCase()]"
+          routerLinkActive="underline text-primary-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="hover:underline hover:text-primary-600 dark:hover:text-primary-500 mx-4"
+        >
+          Plantas de {{ item.nameEs }}
+        </a>
+      </li>
+      }
+    </ul>
+  </div>
+</nav>

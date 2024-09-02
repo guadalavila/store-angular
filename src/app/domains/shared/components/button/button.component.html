@@ -1,0 +1,23 @@
+@switch (type) { @case ('primary') {
+<button
+  (click)="onPressBtn()"
+  type="button"
+  class="focus:outline-none text-white bg-primary-500 hover:bg-primary-700 focus:ring-1 focus:ring-primary-400 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+>
+  {{ text }}
+</button>
+} @case ('link') {
+<a
+  [routerLink]="link"
+  class="focus:outline-none text-white bg-primary-500 hover:bg-primary-700 focus:ring-1 focus:ring-primary-400 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+  >{{ text }}</a
+>
+}@default {
+<button
+  (click)="onPressBtn()"
+  type="button"
+  class="focus:outline-none text-white bg-primary-500 hover:bg-primary-700 focus:ring-1 focus:ring-primary-400 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+>
+  {{ text }}
+</button>
+} }

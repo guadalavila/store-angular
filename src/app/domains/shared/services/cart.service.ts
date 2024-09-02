@@ -1,12 +1,12 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { Product } from '@shared/models/product.models';
+import { Plant } from '@shared/models/plant.models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   //estado inicial del servicio
-  cart = signal<Product[]>([]);
+  cart = signal<Plant[]>([]);
   //computed: una señal q se calcula a partir de otras señales
   total = computed(() => {
     const cart = this.cart();
@@ -15,11 +15,11 @@ export class CartService {
 
   constructor() {}
 
-  addToCart(product: Product) {
+  addToCart(product: Plant) {
     this.cart.update((prevCart) => [...prevCart, product]);
   }
 
-  removeFromCart(product: Product) {
+  removeFromCart(product: Plant) {
     this.cart.update((prevCart) =>
       prevCart.filter((item) => item.id !== product.id)
     );

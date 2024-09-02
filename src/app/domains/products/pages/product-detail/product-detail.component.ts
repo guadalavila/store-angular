@@ -43,9 +43,9 @@ export class ProductDetailComponent {
   }
 
   addToCart() {
-    const product = this.product();
-    if (product) {
-      this.cartService.addToCart(product);
-    }
+    // const product = this.product();
+    // if (product) {
+    //   this.cartService.addToCart(product);
+    // }
   }
 }
